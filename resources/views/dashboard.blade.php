@@ -15,7 +15,6 @@
                         </div>
                     </div>
                 </div>
-                <h1>Sample</h1>
                 <div class="col-12 col-md-4 mb-3">
                     <div class="card border-primary border-2 shadow p-3">
                         <div class="card-body">
