@@ -91,15 +91,16 @@ Route::middleware('admin')->prefix('admin')->group(function () {
             ->name('payments.pay');
         Route::post('process/{reference_no}', [PaymentController::class, 'pay'])
             ->name('payments.pay');
+            // in routes/web.php
     });
 
     Route::prefix('settings')->group(function() {
         Route::resource('property-types', PropertyTypesController::class)
             ->names('property-types')->only('index');
-            
+
         Route::resource('rates', RatesController::class)
             ->names('rates')->only('index', 'store');
-        
+
         Route::resource('base-rate', BaseRateController::class)
             ->names('base-rate')->only('index', 'store');
 
@@ -141,7 +142,7 @@ Route::middleware('auth')->prefix('concessionaire')->group(function() {
             ->name('account-overview.bills');
         Route::get('bills/{reference_no?}', [AccountOverviewController::class, 'bills'])
             ->name('account-overview.bills.reference_no');
-        
+
     });
 
     Route::prefix('/support')->group(function() {
@@ -164,3 +165,6 @@ Route::middleware('auth')->prefix('concessionaire')->group(function() {
 
 Route::resource('/{user_type}/profile', ProfileController::class)
         ->names('profile');
+
+Route::get('/payment/merchants/{reference_no}', [PaymentController::class, 'processOnlinePayment']);
+

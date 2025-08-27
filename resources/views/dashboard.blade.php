@@ -6,12 +6,13 @@
             <div class="main-header">
                 <h1>Dashboard</h1>
             </div>
+            <script>console.log(number_format($data['admins']) ?? 0)</script>
             <div class="row mt-5">
                 <div class="col-12 col-md-4 mb-3">
                     <div class="card border-primary border-2 shadow p-3">
                         <div class="card-body">
                             <h4 class="mb-3 text-uppercase fw-medium">Admins</h4>
-                            <h1>{{$data['users']['admin'] ?? 0}}</h1>
+                            <h1>{{ number_format($data['admins'] ?? 0) }}</h1>
                         </div>
                     </div>
                 </div>
@@ -19,7 +20,7 @@
                     <div class="card border-primary border-2 shadow p-3">
                         <div class="card-body">
                             <h4 class="mb-3 text-uppercase fw-medium">Clients</h4>
-                            <h1>{{$data['users']['client'] ?? 0}}</h1>
+                            <h1>{{ number_format($data['concessionaires'] ?? 0) }}</h1>
                         </div>
                     </div>
                 </div>
@@ -27,7 +28,8 @@
                     <div class="card border-primary border-2 shadow p-3">
                         <div class="card-body">
                             <h4 class="mb-3 text-uppercase fw-medium">Technicians</h4>
-                            <h1>{{$data['users']['technician'] ?? 0}}</h1>
+                            <h1><h1>{{ number_format($data['technicians'] ?? 0) }}</h1>
+</h1>
                         </div>
                     </div>
                 </div>
